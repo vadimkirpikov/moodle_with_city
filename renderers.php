@@ -128,7 +128,8 @@ class theme_city_core_renderer extends core_renderer {
         }
 
         // Add city to user menu bar text
-        $usertextcontents .= " (" . user_get_user_details($user)['city'] . ")";
+        $userdetails = user_get_user_details($user);
+        $usertextcontents .= " (" . userdetails['city'] . ")";
 
         $returnstr .= html_writer::span(
             html_writer::span($usertextcontents, 'usertext mr-1') .
